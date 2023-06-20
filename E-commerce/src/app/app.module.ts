@@ -3,30 +3,20 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
-<<<<<<< HEAD
-=======
 import { ProductComponent } from './home/product/product.component';
-=======
->>>>>>> member
 import { HeaderComponent } from './header/header.component';
 import { BannerComponent } from './home/banner/banner.component';
-
+//dsdfssadfgsfgs
 
 @NgModule({
   declarations: [
     AppComponent,
-<<<<<<< HEAD
     HeaderComponent,
     HomeComponent,
-    BannerComponent
-=======
-<<<<<<< HEAD
+    BannerComponent,
     HomeComponent,
-ProductComponent
-=======
+    ProductComponent,
     HeaderComponent
->>>>>>> main
->>>>>>> member
   ],
   imports: [
     BrowserModule,
