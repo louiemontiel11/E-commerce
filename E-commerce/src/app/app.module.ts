@@ -5,6 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 <<<<<<< HEAD
 import { HomeComponent } from './home/home.component';
+import { ProductComponent } from './home/product/product.component';
 =======
 import { HeaderComponent } from './header/header.component';
 >>>>>>> main
@@ -13,7 +14,8 @@ import { HeaderComponent } from './header/header.component';
   declarations: [
     AppComponent,
 <<<<<<< HEAD
-    HomeComponent
+    HomeComponent,
+ProductComponent
 =======
     HeaderComponent
 >>>>>>> main
