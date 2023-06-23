@@ -1,0 +1,7 @@
+.card-body {
+  /* width: 400px !important; */
+  height: 150px !important;
+  overflow: hidden;
+  white-space: nowrap; /* Don't forget this one */
+  text-overflow: ellipsis;
+}

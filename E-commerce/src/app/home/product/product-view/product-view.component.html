@@ -1,11 +1,11 @@
-<main>
 
+<div *ngIf="viewProduct">
   <div class="album py-5 bg-body-tertiary">
     <div class="container">
-      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-2 row-cols-lg-3 g-3">
-        <div class="col" *ngFor="let p of productArr">
+      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+        <div class="col" >
           <div class="card shadow-sm">
-            <img src="{{ p.productImage }}" alt="" height="225" />
+            <img src="{{ viewProduct.productImage }}" alt="" height="225" />
             <div class="card-body">
               <h3
                 class="card-text"
@@ -13,7 +13,7 @@
                 _msthash="21"
                 style="direction: ltr; text-align: left"
               >
-                {{ p.productName }}
+              {{ viewProduct.productName }}
               </h3>
               <p
                 class="card-text"
@@ -21,44 +21,45 @@
                 _msthash="21"
                 style="direction: ltr; text-align: left"
               >
-                {{ p.productDescription }}
+                {{ viewProduct.productDescription }}
               </p>
               <div class="d-flex justify-content-between align-items-center">
                 <div class="btn-group">
                     <button
                         type="button"
-                        class="btn btn-sm btn-primary"
-                        _msttexthash="63401"
-                        _msthash="22"
-                        style="direction: ltr"
-                        routerLink="/view/{{p.id}}" (click)="onClick(p.id)"
-                      >
-                        View
-                      </button>
-                      <button
-                        type="button"
                         class="btn btn-sm btn-danger"
                         _msttexthash="63401"
                         _msthash="22"
                         style="direction: ltr"
-                         (click)="onAddToCartDetails(p)"
+                        routerLink="/home"
                       >
-                        Add to cart
+                        Back
                       </button>
+
+                  <button
+                    type="button"
+                    class="btn btn-sm btn-outline-secondary"
+                    _msttexthash="162188"
+                    _msthash="23"
+                    style="direction: ltr"
+                    (click)="onAddToCartDetails(viewProduct)"
+                  >
+                    Add to Cart
+                  </button>
                 </div>
                 <small
-                  class="text-body-secondary ms-auto"
+                  class="text-body-secondary"
                   _msttexthash="115934"
                   _msthash="24"
                   style="direction: ltr; text-align: left"
-                  >Price: ${{ p.productPrice }}</small
+                  >Price: ${{ viewProduct.productPrice }}</small
                 >
               </div>
-
             </div>
           </div>
         </div>
       </div>
     </div>
   </div>
-</main>
+</div>
+
