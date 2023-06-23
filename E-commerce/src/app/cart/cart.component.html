@@ -1,0 +1,47 @@
+<div class="container">
+<div class="row mt-5">
+  <div class="col-lg-12">
+    <table class="table table-light table-hover table-bordered">
+      <thead>
+        <tr>
+          <th scope="col">ID</th>
+
+          <th scope="col">NAME</th>
+
+          <th scope="col">DESCRIPTION</th>
+
+          <th scope="col">PRICE</th>
+
+          <th scope="col" class="text-center">ACTION</th>
+        </tr>
+      </thead>
+
+      <tbody *ngFor="let p of cartArr">
+        <tr>
+          <td>{{ p.id }}</td>
+
+          <td>{{ p.productName }}</td>
+
+          <td>{{ p.productDescription }}</td>
+
+          <td>{{ p.productPrice }}</td>
+
+          <td class="text-center">
+            <button
+              class="btn btn-info ms-3"
+            >
+              Update
+            </button>
+            <button
+              class="btn btn-danger ms-3"
+              (click)="onRemoveCart(p.id)"
+            >
+              Remove
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+</div>

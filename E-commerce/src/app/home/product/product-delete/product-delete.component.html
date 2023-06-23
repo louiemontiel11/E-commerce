@@ -1,0 +1,57 @@
+<main>
+  <div class="album py-5 bg-body-tertiary">
+    <div class="container">
+      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+        <div class="col" *ngFor=" let p of productArrDelete">
+          <div class="card shadow-sm">
+            <img
+              src="{{p.productImage}}"
+              alt=""
+              height="225"
+            />
+            <div class="card-body">
+              <h3
+                class="card-text"
+                _msttexthash="9321065"
+                _msthash="21"
+                style="direction: ltr; text-align: left"
+              >
+                {{p.productName}}
+            </h3>
+              <p
+                class="card-text"
+                _msttexthash="9321065"
+                _msthash="21"
+                style="direction: ltr; text-align: left"
+              >
+                {{p.productDescription}}
+              </p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <button
+                    type="button"
+                    class="btn btn-sm btn-danger"
+                    _msttexthash="63401"
+                    _msthash="22"
+                    style="direction: ltr"
+                    (click)="onDelete(p.id)"
+                  >
+                   Delete
+                  </button>
+
+                </div>
+                <small
+                  class="text-body-secondary"
+                  _msttexthash="115934"
+                  _msthash="24"
+                  style="direction: ltr; text-align: left"
+                  >Price: ${{p.productPrice}}</small
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>

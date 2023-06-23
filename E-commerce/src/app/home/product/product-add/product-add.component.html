@@ -1,0 +1,34 @@
+<div class="container">
+  <form [formGroup]="productAddForm" (ngSubmit)="onSubmitProduct()" >
+    <h1 class="h3 mb-3 mt-5 fw-normal">Add product</h1>
+
+    <div class="form-floating">
+      <input type="text" class="form-control" id="floatingInput" placeholder="S" formControlName="productName">
+      <label for="floatingInput">Product name</label>
+      <span *ngIf="productAddForm.get('productName').invalid && productAddForm.get('productName').touched" >Name is required!</span>
+    </div>
+    <div class="form-floating">
+      <input type="text" class="form-control" id="floatingPassword" placeholder="S" formControlName="productDescription">
+      <label for="floatingPassword">Description</label>
+      <span *ngIf="productAddForm.get('productDescription').invalid && productAddForm.get('productDescription').touched" >Description is required!</span>
+
+    </div>
+    <div class="form-floating">
+      <input type="text" class="form-control" id="floatingPassword" placeholder="S" formControlName="productImage">
+      <label for="floatingPassword">Image URL</label>
+      <span *ngIf="productAddForm.get('productImage').invalid && productAddForm.get('productImage').touched" >Image is required!</span>
+
+    </div>
+    <div class="form-floating">
+      <input type="number" class="form-control" id="floatingPassword" placeholder="S" formControlName="productPrice">
+      <label for="floatingPassword">Price</label>
+      <span *ngIf="productAddForm.get('productPrice').invalid && productAddForm.get('productPrice').touched" >Price is required!</span>
+
+    </div>
+
+
+    <button class="btn btn-primary w-100 py-2 mt-3" *ngIf="productAddForm.valid">Create</button>
+    <button class="btn btn-danger w-100 py-2 mt-3" *ngIf="productAddForm.invalid" routerLink="/home">Back to home </button>
+    <p class="mt-5 mb-3 text-body-secondary">© 2017–2023</p>
+  </form>
+</div>
