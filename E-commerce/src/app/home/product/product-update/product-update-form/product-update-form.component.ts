@@ -1,6 +1,7 @@
 import { Component, EventEmitter, Input, OnChanges, OnInit, Output } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ProductModel } from 'src/app/model/product.model';
+import { NotificationService } from 'src/app/shared-service/notification.service';
 import { ProductService } from 'src/app/shared-service/product.service';
 
 @Component({
@@ -14,7 +15,7 @@ export class ProductUpdateFormComponent implements OnInit, OnChanges{
   @Output() hideForm = new EventEmitter<boolean>();
   @Output() submitForm = new EventEmitter<ProductModel>();
 
-  constructor(private productService: ProductService){
+  constructor(private productService: ProductService, private notify: NotificationService){
     this.productUpdateForm = new FormGroup({
       productName: new FormControl(null, [Validators.required]),
       productDescription: new FormControl(null, Validators.required),
@@ -43,6 +44,8 @@ export class ProductUpdateFormComponent implements OnInit, OnChanges{
     this.submitForm.emit(this.productUpdateForm.value);
     console.log(this.productUpdateForm.value);
     this.productService.updateProduct(this.updateInfo.id, this.productUpdateForm.value);
+    this.notify.showSuccess('Updated Successfully');
+
   }
   onCancelForm(){
     this.hideForm.emit(false);

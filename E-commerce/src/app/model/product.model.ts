@@ -4,4 +4,6 @@ export interface ProductModel{
   productDescription: string;
   productImage: string;
   productPrice: number;
+  quantiy?: string;
+  total?: number;
 }

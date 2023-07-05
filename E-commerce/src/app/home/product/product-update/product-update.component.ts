@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { ProductModel } from 'src/app/model/product.model';
 import { ProductService } from 'src/app/shared-service/product.service';
 
@@ -19,6 +20,7 @@ export class ProductUpdateComponent implements OnInit {
     })
   }
   onUpdate(id: string){
+    window.scrollTo({ top: 0, behavior: 'smooth' })
     this.updateSingleProduct = this.productUpdateArr.find(p => {
       return p.id === id;
     })

@@ -1,3 +1,15 @@
-<div style="color: antiquewhite;" class="container">
+<!-- <div style="color: antiquewhite;" class="container position-relative">
   <img src="https://images.pexels.com/photos/10677487/pexels-photo-10677487.jpeg" alt="" style="width:100%;height:700px;">
+</div> -->
+
+<div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+  <div class="carousel-inner" role="listbox">
+    <img src="{{ getSlide() }}" alt="slide" />
+  </div>
+  <div class="button">
+    <button class="left" (click)="getPrev()">Prev</button>
+
+    <button class="right" (click)="getNext()">Next</button>
+  </div>
+
 </div>

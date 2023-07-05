@@ -7,6 +7,9 @@ import { ProductDeleteComponent } from './home/product/product-delete/product-de
 import { ProductUpdateComponent } from './home/product/product-update/product-update.component';
 import { ProductViewComponent } from './home/product/product-view/product-view.component';
 import { CartComponent } from './cart/cart.component';
+import { ProductComponent } from './home/product/product.component';
+import { RegistersComponent } from './registers/registers.component';
+import { LoginComponent } from './login/login.component';
 
 const routes: Routes = [
   {path: '', redirectTo: 'home', pathMatch: 'full'},
@@ -14,6 +17,9 @@ const routes: Routes = [
   // {path: 'home', children: [
   //   {path: 'view/:id', component: ProductViewComponent}
   // ]},
+  {path: 'product', component: ProductComponent},
+  {path: 'register', component: RegistersComponent},
+  {path: 'login', component: LoginComponent},
   {path: 'cart', component: CartComponent},
   {path: 'view/:id', component: ProductViewComponent},
   {path: 'product-add', component: ProductAddComponent},

@@ -3,6 +3,7 @@ import { Subscription } from 'rxjs';
 import { ProductModel } from 'src/app/model/product.model';
 import { CartService } from 'src/app/shared-service/cart.service';
 import { DataService } from 'src/app/shared-service/data.service';
+import { NotificationService } from 'src/app/shared-service/notification.service';
 import { ProductService } from 'src/app/shared-service/product.service';
 
 @Component({
@@ -16,11 +17,13 @@ export class ProductViewComponent implements OnInit, OnDestroy {
   private viewSubscription: Subscription;
   name: string;
 
-  constructor(private dataService: DataService, private productService: ProductService, private cartService: CartService) {}
+  constructor(private dataService: DataService, private productService: ProductService, private cartService: CartService, private notify: NotificationService) {}
 
   ngOnInit(): void {
 
     this.viewProduct = this.dataService.getSingleProduct;
+    console.log(this.viewProduct);
+
   }
 
   onView() {
@@ -31,7 +34,9 @@ export class ProductViewComponent implements OnInit, OnDestroy {
     // this.viewSubscription.unsubscribe();
   }
 
-  onAddToCartDetails(data){
-    this.cartService.addProduct(data);
+  onAddToCartDetails(item){
+    this.notify.showSuccess('Added Successfully');
+    // this.cartService.addProduct(item);  //http
+    this.cartService.addToCart(item);   //api
   }
 }

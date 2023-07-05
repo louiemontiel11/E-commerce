@@ -1,6 +1,11 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
+import { ToastrModule } from 'ngx-toastr';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {AngularFireModule} from '@angular/fire/compat'
+import {AngularFireAuthModule} from '@angular/fire/compat/auth'
+
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { ProductComponent } from './home/product/product.component';
@@ -15,6 +20,9 @@ import { ProductUpdateComponent } from './home/product/product-update/product-up
 import { ProductUpdateFormComponent } from './home/product/product-update/product-update-form/product-update-form.component';
 import { ProductViewComponent } from './home/product/product-view/product-view.component';
 import { CartComponent } from './cart/cart.component';
+import { RegistersComponent } from './registers/registers.component';
+import { LoginComponent } from './login/login.component';
+import { environment } from 'src/environments/environment';
 
 @NgModule({
   declarations: [
@@ -31,13 +39,22 @@ import { CartComponent } from './cart/cart.component';
     ProductUpdateComponent,
     ProductUpdateFormComponent,
     ProductViewComponent,
-    CartComponent
+    CartComponent,
+    RegistersComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     AppRoutingModule,
     ReactiveFormsModule,
+    BrowserAnimationsModule,
+    ToastrModule.forRoot({
+      timeOut: 2000,
+      positionClass: 'toast-bottom-right'
+    }),
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFireAuthModule
   ],
   providers: [],
   bootstrap: [AppComponent]

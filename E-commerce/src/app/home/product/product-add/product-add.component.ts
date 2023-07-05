@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import {  FormGroup, FormControl, Validators} from '@angular/forms';
 import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 import { ProductService } from 'src/app/shared-service/product.service';
 
 @Component({
@@ -11,7 +12,7 @@ import { ProductService } from 'src/app/shared-service/product.service';
 export class ProductAddComponent {
   productAddForm: FormGroup;
 
-  constructor(private productService: ProductService, private router: Router){
+  constructor(private productService: ProductService, private router: Router, private toastr: ToastrService){
     this.productAddForm = new FormGroup({
       productName: new FormControl(null, [Validators.required]),
       productDescription: new FormControl(null, Validators.required),
@@ -23,6 +24,9 @@ export class ProductAddComponent {
   onSubmitProduct(){
     this.productService.addProduct(this.productAddForm.value);
     this.productAddForm.reset();
+    // this.router.navigate(['product'])
+    this.toastr.success('Added Successfully')
+
   }
 
 }

@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "fir-84844": {
+      "hosting": {
+        "E-commerce": [
+          "fir-84844"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "fir-84844"
+  }
+}

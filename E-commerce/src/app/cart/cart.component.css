@@ -1,0 +1,13 @@
+th, td, thead,tbody, #id{
+  white-space: nowrap!important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+
+}
+tr{
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+table { table-layout: fixed; }
+ /* table th, table td { overflow: hidden; } */

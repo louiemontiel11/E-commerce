@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NotificationService } from 'src/app/shared-service/notification.service';
 import { ProductService } from 'src/app/shared-service/product.service';
 
 @Component({
@@ -9,7 +10,7 @@ import { ProductService } from 'src/app/shared-service/product.service';
 export class ProductDeleteComponent implements OnInit {
   productArrDelete = []
 
-  constructor(private productService: ProductService) {}
+  constructor(private productService: ProductService, private notif: NotificationService) {}
 
   ngOnInit(): void {
     this.productService.getAllProduct().subscribe(res => {
@@ -25,5 +26,7 @@ export class ProductDeleteComponent implements OnInit {
     console.log(this.productArrDelete);
 
     this.productService.deleteProdut(id).subscribe();
+    this.notif.showSuccess('Deleted Successfully');
+
   }
 }
